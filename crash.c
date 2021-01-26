@@ -9,7 +9,7 @@
 
 int main()
 {
-  int *x = NULL;
+  int *x = NULL; 
 
   *x = 42;
 
