@@ -1,0 +1,20 @@
+#
+# Simple makefile 3
+# suggested by Chase Lambert's Make tutorial
+# https://makefiletutorial.com/#getting-started
+#
+
+foople:		foople.o
+	gcc -Wall -pedantic -std=c11 -ggdb -o foople foople.o
+
+foople.o:	foople.c
+	gcc -Wall -pedantic -std=c11 -ggdb -c foople.c
+
+foople.c:
+	echo "int main() {return 42;}" > foople.c
+
+clean:
+	- rm -f foople.c foople.o foople
+
+dir:
+	@echo $(shell ls)

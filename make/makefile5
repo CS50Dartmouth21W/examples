@@ -1,0 +1,17 @@
+#
+# Simple makefile 5
+#
+MYGCC = gcc -Wall -pedantic -std=c11 -ggdb
+#
+
+foople:		foople.o
+	$(MYGCC) -o foople foople.o
+
+foople.o:	foople.c
+	$(MYGCC) -c foople.c
+
+foople.c:
+	echo "int main() {return 42;}" > foople.c
+
+run:		foople
+	-./foople   1 2 3 "args"

@@ -1,0 +1,22 @@
+#
+# comments
+#
+
+VARIABLE = values
+
+# ------------
+#
+# the first target in the file is the default target
+
+targets:	prerequisites
+	command
+	command
+
+othertargets:	their_prerequisites
+	command
+	command
+
+# . . .
+
+clean:
+	commands to clean up
