@@ -1,0 +1,27 @@
+# Makefile for the "names" program that uses the "bag" module.
+#
+# David Kotz - April 2017, 2019
+
+CC = gcc
+CFLAGS = -Wall -pedantic -std=c11 -ggdb
+PROG = namesA
+OBJS = namesA.o bagA.o readlinep.o
+LIBS = -lm
+
+.PHONY: all clean
+
+all: namesA
+
+# executable depends on object files
+$(PROG): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(PROG)
+
+# object files depend on include files
+namesA.o: bagA.h readlinep.h
+bagA.o: bagA.h
+readlinep.o: readlinep.h
+
+clean:
+	rm -f $(PROG)
+	rm -f *~ *.o
+	rm -rf *.dSYM
